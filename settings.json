@@ -5,3 +5,34 @@
     "ANTHROPIC_MODEL": "mistral-large-2512"
   }
 }
+{
+  "//": "Cấu hình quyền cho Claude Code. Chọn 1 trong 3 khối 'allow' bên dưới tuỳ theo hệ điều hành bạn đang dùng (Windows / macOS / Linux), rồi xoá 2 khối còn lại. Đường dẫn thư mục cá nhân dùng biến $HOME (macOS/Linux) hoặc %USERPROFILE% (Windows) tương ứng.",
+
+  "permissions": {
+    "allow": [
+      "Read($HOME/**)",
+      "Write($HOME/Documents/**)",
+      "Write($HOME/Desktop/**)",
+      "Bash(ls:*)",
+      "Bash(pwd)",
+      "Bash(cat:*)",
+      "Bash(find:*)",
+      "WebSearch",
+      "WebFetch(domain:*)"
+    ],
+    "deny": [
+      "Read($HOME/.ssh/**)",
+      "Read($HOME/.aws/**)",
+      "Read($HOME/.env)",
+      "Bash(rm -rf:*)",
+      "Bash(sudo:*)"
+    ],
+    "ask": [
+      "Write(**)",
+      "Bash(*)"
+    ]
+  },
+
+  "//_windows_note": "Trên Windows, thay $HOME bằng C:\\Users\\<TenBan>. Ví dụ: 'Read(C:\\\\Users\\\\Ten\\\\**)'.",
+  "//_macos_linux_note": "Trên macOS/Linux, $HOME được Claude Code tự nhận diện từ biến môi trường hệ thống, không cần sửa nếu chạy trong shell của user."
+}
