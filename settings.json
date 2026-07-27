@@ -1,0 +1,7 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://localhost:5555",
+    "ANTHROPIC_API_KEY": "sk-cms-k92083222018",
+    "ANTHROPIC_MODEL": "mistral-large-2512"
+  }
+}
