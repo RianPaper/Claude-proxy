@@ -1,428 +1,332 @@
 # 🌐 Claude Proxy
 
-<div align="right">
-
-[🇻🇳 Tiếng Việt](#-claude-proxy) | [🇺🇸 English](#-claude-proxy-english) | [🇨🇳 简体中文](#-claude-proxy-中文)
-
-</div>
+> A lightweight proxy that allows Claude Code to work with AI providers that are not officially supported.
 
 ---
 
-# 🇻🇳 Claude Proxy
+## ✨ Features
 
-## 📖 Claude Proxy là gì?
-
-Claude Proxy là một công cụ giúp **chuyển hướng (Proxy)** các yêu cầu từ **Claude Code** đến nhà cung cấp AI mà bạn đang sử dụng nhưng **Claude Code chưa hỗ trợ trực tiếp**.
-
-Điều này cho phép bạn sử dụng nhiều nhà cung cấp AI khác nhau ngay trong Claude Code mà không cần chờ hỗ trợ chính thức.
+- 🚀 Lightweight and fast
+- 🔗 Redirect Claude Code requests
+- 🤖 Compatible with multiple AI providers
+- 🔓 Fully open source
+- 🛡️ Safe and transparent
+- ⚙️ Easy configuration
+- 📦 Portable executable
+- 💻 Windows support
 
 ---
 
-## 🔒 Claude Proxy có an toàn không?
+# 📖 What is Claude Proxy?
 
-**Có.**
+Claude Proxy is a lightweight application that acts as a bridge between **Claude Code** and AI providers that are not officially supported by Claude Code.
 
-Toàn bộ mã nguồn của Claude Proxy đều được công khai trong repository này, vì vậy bạn hoàn toàn có thể tự kiểm tra chương trình hoạt động như thế nào.
+Instead of communicating directly with Anthropic's API, Claude Code sends its requests to Claude Proxy. Claude Proxy then forwards those requests to the AI provider you have configured.
 
-Một số phần mềm diệt virus hoặc VirusTotal có thể cảnh báo tệp `.exe` là **Trojan**. Đây **không đồng nghĩa** với việc phần mềm chứa mã độc.
+This allows Claude Code to work with many different AI providers while keeping the user experience almost identical.
 
-Điều này thường xảy ra với các chương trình được đóng gói bằng Python hoặc có hành vi mở kết nối mạng.
+The goal of this project is to make Claude Code more flexible without requiring official support for every provider.
 
-> ⚠️ Chúng tôi **không thêm bất kỳ mã độc, cửa hậu (Backdoor), phần mềm gián điệp (Spyware) hay bất kỳ phương thức nào nhằm truy cập trái phép vào máy tính của bạn.**
+---
 
-Nếu bạn không tin tưởng, hãy kiểm tra trực tiếp mã nguồn.
+# 🔒 Is Claude Proxy Safe?
 
-Đặc biệt là tệp:
+**Yes.**
+
+Claude Proxy is completely **open source**.
+
+Every line of code used by the application is available inside this repository, meaning anyone can inspect exactly how it works.
+
+Some antivirus programs or VirusTotal may report the executable as a **Trojan**.
+
+This **does not necessarily mean the application is malicious**.
+
+Applications packaged with Python, especially those that create local proxy services or intercept HTTP requests, are commonly flagged by heuristic detection engines.
+
+These reports are often **false positives**.
+
+Claude Proxy **does not**:
+
+- ❌ Install malware
+- ❌ Install spyware
+- ❌ Create backdoors
+- ❌ Mine cryptocurrency
+- ❌ Collect personal information
+- ❌ Upload your files
+- ❌ Remotely control your computer
+
+If you are concerned about security, we strongly encourage you to inspect the source code yourself.
+
+The application's main logic is located in:
 
 ```text
 claude_proxy.py
 ```
 
-Bạn có thể tự đọc toàn bộ mã nguồn để xác minh.
+Since the project is open source, you are free to build the executable yourself.
 
 ---
 
-# 📥 Bước 1 - Tải Claude Proxy
+# 📥 Installation
 
-Truy cập mục **Releases** của repository.
+## Step 1 — Download
 
-Tải phiên bản mới nhất.
+Go to the **Releases** page.
 
-Sau khi tải xong hãy mở:
+Download the latest version of:
 
 ```text
 Claude Proxy.exe
 ```
 
----
+Run the executable.
 
-# ⚙️ Bước 2 - Cấu hình Proxy
-
-Sau khi mở chương trình:
-
-✅ Nhập API Key
-
-✅ Chọn nhà cung cấp AI
-
-✅ Chọn Model
-
-✅ Nhập các thông tin cần thiết
-
-Sau đó nhấn:
-
-▶ **Run**
-
-Nếu chương trình hiện trạng thái Running nghĩa là Proxy đã hoạt động.
+No installation is required.
 
 ---
 
-# 📝 Bước 3 - Cấu hình Claude Code
+## Step 2 — Configure Claude Proxy
 
-## 1️⃣ Mở thư mục cấu hình
+When the application opens, complete the required fields.
 
-Mở **File Explorer**
+Typically these include:
 
-↓
+- 🔑 API Key
+- 🌐 Provider
+- 🤖 Model
+- ⚙️ Custom settings (if required)
 
+After entering the information, click:
+
+> ▶ Run
+
+If everything is configured correctly, the application will display that the proxy server is running.
+
+Leave Claude Proxy running while using Claude Code.
+
+---
+
+# ⚙️ Configure Claude Code
+
+Claude Code must be configured to communicate with Claude Proxy.
+
+## Locate the configuration folder
+
+Open **File Explorer**.
+
+Navigate to:
+
+```text
 This PC
+```
 
-↓
+Open your Windows drive.
 
-Ổ cài Windows
-
-Thông thường là:
+Usually:
 
 ```text
 C:\
 ```
 
-↓
-
-Mở thư mục:
+Open:
 
 ```text
 Users
 ```
 
-↓
+Open your Windows account folder.
 
-Mở thư mục tài khoản Windows của bạn.
-
-Ví dụ:
+Example:
 
 ```text
-C:\Users\fanfan
+C:\Users\John
 ```
 
-↓
-
-Mở tiếp:
+Open:
 
 ```text
 .claude
 ```
 
-↓
-
-Bạn sẽ thấy:
+Locate:
 
 ```text
 settings.json
 ```
 
-Mở bằng **Notepad**.
+Open the file using Notepad.
 
 ---
 
-## 2️⃣ Chỉnh sửa settings.json
+## Replace the configuration
 
-Nếu bạn đã từng dùng Claude Code trước đây:
+If you have previously configured Claude Code, remove the old configuration from:
 
-🗑 Xóa toàn bộ nội dung cũ trong `settings.json`.
+```text
+settings.json
+```
 
-Nếu bạn vừa mới cài Claude Code bằng PowerShell hoặc CMD thì thường không cần xóa.
+If this is a fresh Claude Code installation, you usually don't need to remove anything.
 
-Quay lại repository.
+Return to this repository.
 
-Ở đầu trang sẽ có mục:
+At the top of the repository you'll find a section named:
 
 ```text
 Config
 ```
 
-Sao chép **toàn bộ nội dung** trong Config.
+Copy the entire configuration.
 
-Dán vào:
+Paste it into:
 
 ```text
 settings.json
 ```
 
-Sau đó nhấn:
+Press:
 
 ```text
 Ctrl + S
 ```
 
-để lưu.
+to save the file.
 
 ---
 
-# 🚀 Bước 4 - Chạy Claude Code
+# 🚀 Launch Claude Code
 
-Nhấn:
+Open Command Prompt.
 
-```text
-Win + R
-```
-
-Nhập:
-
-```text
-cmd
-```
-
-Nhấn **Enter**
-
-Sau đó nhập:
+Run:
 
 ```bash
 claude
 ```
 
-Nhấn **Enter**
+Claude Code will start.
 
-Claude Code sẽ mở.
+Choose your preferred interface.
 
-Tiếp tục chọn giao diện bạn muốn sử dụng.
-
-Sau đó nhấn **Enter** thêm một lần nữa để mở Claude trong thư mục hiện tại.
+Press **Enter** again to continue.
 
 ---
 
-# 🔗 Bước 5 - Kết nối Proxy
+# 🔗 Connect to Claude Proxy
 
-Nếu Claude Code hỏi:
+During the initial setup, Claude Code may ask:
 
 ```text
 Use sk-cms?
 ```
 
-✅ Chọn dòng trên (Yes)
+Select:
 
-❌ Không chọn No
+✅ **Yes**
 
-Sau khi xác nhận, Claude Code sẽ kết nối tới Claude Proxy.
+Do **not** select **No**.
+
+Claude Code will then connect to Claude Proxy.
 
 ---
 
-# 🛠 Nếu chưa hoạt động
+# 🛠 Troubleshooting
 
-Trong Claude Code nhập:
+If Claude Code doesn't work immediately:
+
+Run:
 
 ```text
 /model
 ```
 
-Dùng:
+Use the **Up** and **Down** arrow keys to select the same model configured inside Claude Proxy.
 
-⬆
+Press **Enter**.
 
-⬇
-
-để chọn đúng model mà bạn đang cấu hình trong Claude Proxy.
-
-Nhấn:
-
-```text
-Enter
-```
-
-Sau đó thử nhập:
+After that, try sending:
 
 ```text
 hi
 ```
 
-Nếu Claude trả lời bình thường và không báo lỗi thì bạn đã cài đặt thành công.
-
-🎉 Chúc mừng!
+If Claude responds normally without errors, your installation is complete.
 
 ---
 
-# ❓ Câu hỏi thường gặp
+# ❓ Frequently Asked Questions
 
-## VirusTotal báo Trojan?
+## VirusTotal says Claude Proxy is a Trojan
 
-Đây có thể chỉ là **False Positive**.
+This is usually a **false positive**.
 
-Nếu bạn lo ngại, hãy tự kiểm tra mã nguồn trước khi sử dụng.
+The executable may trigger heuristic detections because it creates a local proxy service.
 
----
-
-## Claude Code không kết nối được?
-
-Kiểm tra:
-
-- Proxy đã Running chưa.
-- API Key đúng chưa.
-- Model đã chọn đúng chưa.
-- `settings.json` đã dán đúng Config chưa.
+If you are unsure, inspect the source code and build the executable yourself.
 
 ---
 
-## Proxy bị lỗi?
+## Claude Code cannot connect
 
-Hãy mở lại Proxy và kiểm tra thông báo lỗi trong cửa sổ chương trình.
+Make sure:
 
----
-
-# 📞 Liên hệ
-
-Nếu có bất kỳ thắc mắc hoặc cần hỗ trợ, vui lòng liên hệ Telegram:
-
-**👤 @Nulltestfun1**
+- Claude Proxy is running.
+- Your API key is correct.
+- Your provider configuration is correct.
+- The selected model matches the proxy configuration.
+- The correct Config has been copied into `settings.json`.
 
 ---
 
----
+## Claude Code returns model errors
 
-# 🇺🇸 Claude Proxy English
-
-> Click **🇻🇳 Tiếng Việt** above for Vietnamese.
-
-## What is Claude Proxy?
-
-Claude Proxy redirects Claude Code requests to AI providers that Claude Code doesn't support natively.
-
-It lets you use different AI providers through Claude Code without waiting for official support.
-
-## Is it safe?
-
-✅ Yes.
-
-The source code is completely open-source and available in this repository.
-
-Some antivirus software or VirusTotal may flag the executable as a Trojan because it is packaged with Python or performs network communication. This is often a **False Positive**.
-
-You can inspect the source code yourself, especially:
-
-```text
-claude_proxy.py
-```
-
-## Quick Start
-
-1. Download the latest version from **Releases**.
-2. Open **Claude Proxy.exe**.
-3. Configure your API Key, Provider and Model.
-4. Click **Run**.
-5. Copy the repository's **Config** into:
-
-```text
-C:\Users\<YourUser>\.claude\settings.json
-```
-
-6. Save the file.
-7. Open CMD.
-
-```bash
-claude
-```
-
-8. If prompted:
-
-```
-Use sk-cms?
-```
-
-Choose **Yes**.
-
-If necessary, run:
+Run:
 
 ```text
 /model
 ```
 
-Select the correct model.
-
-You're done.
+Then choose the same model configured in Claude Proxy.
 
 ---
 
-## Contact
+## Nothing happens after starting Claude
 
-Telegram:
+Restart Claude Code.
 
-**@Nulltestfun1**
+Restart Claude Proxy.
 
----
-
-# 🇨🇳 Claude Proxy 中文
-
-> 点击上方 **🇨🇳 中文** 可快速查看。
-
-## Claude Proxy 是什么？
-
-Claude Proxy 是一个代理工具，可以将 Claude Code 的请求转发到 Claude Code 尚未原生支持的 AI 服务提供商。
-
-## 是否安全？
-
-✅ 是的。
-
-本项目完全开源，您可以查看所有源代码。
-
-部分杀毒软件或 VirusTotal 可能会误报 Trojan（木马），这通常属于 **误报（False Positive）**。
-
-您可以直接查看：
-
-```text
-claude_proxy.py
-```
-
-确认程序的全部实现。
-
-## 快速开始
-
-1. 在 **Releases** 下载最新版本。
-2. 打开 **Claude Proxy.exe**。
-3. 配置 API Key、Provider 和 Model。
-4. 点击 **Run**。
-5. 将仓库中的 **Config** 复制到：
-
-```text
-C:\Users\<用户名>\.claude\settings.json
-```
-
-6. 保存文件。
-7. 打开 CMD。
-
-```bash
-claude
-```
-
-8. 如果提示：
-
-```
-Use sk-cms?
-```
-
-请选择 **Yes**。
-
-如果需要：
-
-```text
-/model
-```
-
-选择正确的模型即可。
-
-🎉 配置完成！
+Verify that your firewall or antivirus is not blocking localhost connections.
 
 ---
 
-## 联系方式
+# 📂 Project Structure
 
-Telegram：
+```text
+.
+├── claude_proxy.py
+├── config/
+├── releases/
+├── README.md
+└── LICENSE
+```
 
-**@Nulltestfun1**
+---
+
+# ❤️ Support
+
+If you have any questions, suggestions, or need assistance, feel free to contact us.
+
+**Telegram**
+
+> @Nulltestfun1
+
+---
+
+# ⭐ Support the Project
+
+If Claude Proxy helps you, please consider giving this repository a **Star**.
+
+It helps more people discover the project and motivates future development.
+
+Thank you for using Claude Proxy ❤️
